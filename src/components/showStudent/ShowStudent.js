@@ -13,12 +13,14 @@ export default function CreatStudent() {
   const [studentList, setastudentList] = React.useState([]);
 
   const deletStudent = (id) => {
-    axios.delete(`http://localhost:5000/student/${id}`);
+    axios.delete(`https://smsbackend-49aa.onrender.com/student/${id}`);
   };
   React.useEffect(() => {
-    axios.get("http://localhost:5000/student").then((allStudent) => {
-      setastudentList(allStudent.data);
-    });
+    axios
+      .get("https://smsbackend-49aa.onrender.com/student")
+      .then((allStudent) => {
+        setastudentList(allStudent.data);
+      });
   });
   return (
     <div className="head">
